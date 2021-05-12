@@ -17,8 +17,8 @@ class Influencer(models.Model):
     pic = models.ImageField(upload_to="Influencer/Pic/", blank=True, null=True)
     banner = models.ImageField(upload_to="Influencer/Banner/", blank=True, null=True)
     bio = models.CharField(max_length=64, blank=True, null=True)
-    about = models.TextField()
-    rating = models.PositiveIntegerField(default=0)
+    about = models.TextField(blank=True, null=True)
+    rating = models.PositiveIntegerField(default=0, blank=True, null=True)
 
     def __str__(self):
         return self.user.username
