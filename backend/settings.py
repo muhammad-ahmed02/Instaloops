@@ -23,21 +23,13 @@ INSTALLED_APPS = [
 
     'content.apps.ContentConfig',
 
-    "rest_auth",
-    "rest_auth.registration",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
     'allauth.socialaccount.providers.facebook',
-    "rest_framework",
-    "rest_framework.authtoken",
-    "corsheaders",
 ]
 
-SITE_ID = 1
-
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -97,20 +89,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.TokenAuthentication",
-        "rest_framework.authentication.SessionAuthentication",
-    ),
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.AllowAny", ),
-}
-
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 )
-
-REST_SESSION_LOGIN = True
+)
 
 LANGUAGE_CODE = 'en-us'
 
@@ -130,17 +113,3 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = "/media/"
-
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_METHODS = ["DELETE", "GET", "POST", "PUT", "PATCH"]
-CORS_ALLOW_HEADERS = (
-    "accept",
-    "accept-encoding",
-    "Authorization",
-    "content-type",
-    "dnt",
-    "origin",
-    "user-agent",
-    "x-csrftoken",
-    "x-requested-with",
-)
