@@ -1,0 +1,40 @@
+// MIXINS
+@mixin text($font, $size, $weight: 400, $style: normal) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  font-style: normal;
+}
+
+@mixin box($dir, $padding, $background, $margin: 0px) {
+  display: flex;
+  flex-direction: $dir;
+  padding: $padding;
+  background: $background;
+  margin: $margin;
+}
+
+// INCLUDED FONTS
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap');
+
+// FONTS
+$roboto: 'Roboto', sans-serif;
+
+// COLORS
+$mattBlack: #333;
+$offWhite: #e2e2e2;
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  @include box(row, 20px 40px, $offWhite);
+}
+.site-name {
+  @include text($roboto, 28px, 500);
+  text-transform: lowercase;
+  padding: 0 0px 12px 0px;
+  border-bottom: 3px solid black;
+}

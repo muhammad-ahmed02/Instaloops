@@ -4,11 +4,9 @@ from django.views.static import serve
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('all-auth/', include("allauth.urls")),
-    path('app/', include("content.api.urls")),
-    re_path(r"^media/(?P<path>.*)$", serve,
-            {"document_root": settings.MEDIA_ROOT}),
-    re_path(r"^static/(?P<path>.*)$", serve,
-            {"document_root": settings.STATIC_ROOT}),
+    path("admin/", admin.site.urls),
+    path("all-auth/", include("allauth.urls")),
+    path("", include("content.urls")),
+    re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
+    re_path(r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}),
 ]
