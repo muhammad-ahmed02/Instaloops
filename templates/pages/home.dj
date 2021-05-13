@@ -1,5 +1,5 @@
 {% extends 'base.dj' %}
-
+{% block title %}Home{% endblock title %}
 {% block content %}
 Home Page
 {% endblock content %}

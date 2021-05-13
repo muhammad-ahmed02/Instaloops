@@ -1,16 +1,18 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    <title>{% block title %}{% endblock title %}</title>
-    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
+    />
+    <title>Document</title>
   </head>
   <body>
-  <div class="main-body">
+    <div class="main-body">
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
@@ -60,15 +62,44 @@
         </div>
       </nav>
 
-      {% block content %}
-      {% endblock content %}
+      <div class="login-page">
+        <form class="form">
+          <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="email" placeholder="Email" />
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="password" placeholder="Password" />
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control">
+              <button class="button is-success" style="width: 100%">
+                Login
+              </button>
+            </p>
+          </div>
+        </form>
+      </div>
+
       <footer class="footer">
         <div class="content has-text-centered">
           <p>&copy; All copyrights all reserved.</p>
         </div>
       </footer>
     </div>
-    
-  <script src="{% static 'style/navbar.js' %}"></script>
+
+    <script src="navbar.js"></script>
   </body>
 </html>

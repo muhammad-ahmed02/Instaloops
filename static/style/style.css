@@ -5,16 +5,15 @@ body {
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px 40px;
   background: #e2e2e2;
-  margin: 0px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .site-name {
@@ -23,7 +22,35 @@ header {
   font-weight: 500;
   font-style: normal;
   text-transform: lowercase;
-  padding: 0 0px 12px 0px;
-  border-bottom: 3px solid black;
+  padding: 4px 0px 8px 0px;
+}
+
+.main-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background: none;
+  margin: none;
+  width: 100%;
+}
+
+.form {
+  margin: 20px;
+  background-color: #333;
+  padding: 30px;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=style.css.map */

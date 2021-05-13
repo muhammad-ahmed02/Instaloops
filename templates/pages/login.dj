@@ -1,0 +1,7 @@
+{% extends "base.dj" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+login page
+{% endblock content %}
