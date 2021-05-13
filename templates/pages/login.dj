@@ -6,34 +6,49 @@
 <div class="form-box">
     <div class="form-right">
         <div class="form-divider"></div>
-        <form class="form">
-        <legend class="legend">LOGIN</legend>
-        <div class="field">
-            <p class="control has-icons-left has-icons-right">
-            <input class="input" type="email" placeholder="Email" />
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-            </span>
-            </p>
-        </div>
-        <div class="field">
-            <p class="control has-icons-left">
-            <input class="input" type="password" placeholder="Password" />
-            <span class="icon is-small is-left">
-                <i class="fas fa-lock"></i>
-            </span>
-            </p>
-        </div>
-        <div class="field">
-            <p class="control">
-            <button class="button is-success" style="width: 100%">
-                Login
-            </button>
-            </p>
-        </div>
+        <form class="form" method="post">
+            <legend class="legend">LOGIN</legend>
+            {% csrf_token %}
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                <input class="input {% if login_failed %}is-danger{% endif %}" name="auth_email" value="{{email}}" type="email" placeholder="Email" />
+                <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                </span>
+                <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                <input class="input {% if login_failed %}is-danger{% endif %}" type="password" value="{{password}}" name="auth_password" placeholder="Password" />
+                <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                <button class="button sm is-info" style="width: 100%">
+                    LOGIN
+                </button>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <button class=" is-instagram" style="width: 100%">
+                        <span>Login With Instagram</span>
+                        <i class="fab fa-lg fa-instagram"></i>
+                        <div style="margin-right: auto"></div>
+                    </button>
+                </p>
+            </div>
+            {% if login_failed %}
+            <div class="error">
+                {{login_error}}
+            </div>
+            {% endif %}
         </form>
     </div>
 </div>
