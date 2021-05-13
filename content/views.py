@@ -7,3 +7,7 @@ def home(request):
 
 def login(request):
     return render(request, "pages/login.dj")
+
+
+def signup(request):
+    return render(request, "pages/signup.dj")

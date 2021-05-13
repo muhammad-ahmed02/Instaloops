@@ -1,4 +1,5 @@
 {% load static %}
+{% with domain="http://localhost:8000/" %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,7 +14,7 @@
   <div class="main-body">
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
+          <a class="navbar-item" href="{{domain}}">
             <div class="site-name">Instaloops</div>
           </a>
 
@@ -32,7 +33,7 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item"> Home </a>
+            <a href="{{domain}}" class="navbar-item"> Home </a>
 
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link"> More </a>
@@ -50,10 +51,10 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-info">
+                <a href="{{ domain }}signup/" class="button is-info">
                   <strong>Sign up</strong>
                 </a>
-                <a class="button is-light"> Log in </a>
+                <a href="{{ domain }}login/" class="button is-light"> Log in </a>
               </div>
             </div>
           </div>
@@ -72,3 +73,4 @@
   <script src="{% static 'style/navbar.js' %}"></script>
   </body>
 </html>
+{% endwith %}
