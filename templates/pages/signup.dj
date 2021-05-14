@@ -7,12 +7,13 @@
     <div class="form-right">
         <div class="form-divider"></div>
         <form class="form">
+            {% csrf_token %}
             <legend class="legend">Signup</legend>
             <div class="field">
                 <p class="control has-icons-left">
                 <input class="input" type="text" placeholder="Username" />
                 <span class="icon is-small is-left">
-                    <i class="fas fa-lock"></i>
+                    <i class="fas fa-user"></i>
                 </span>
                 </p>
             </div>
@@ -43,6 +44,7 @@
                 </span>
                 </p>
             </div>
+            
             <div class="field">
                 <p class="control">
                 <button class="button sm is-info" style="width: 100%">

@@ -66,12 +66,12 @@
       {% endblock content %}
       <footer class="footer">
         <div class="content has-text-centered">
-          <p>&copy; All copyrights all reserved.</p>
+          <p>&copy; All copyrights are reserved.</p>
         </div>
       </footer>
     </div>
     
-  <script src="{% static 'style/navbar.js' %}"></script>
+  <script src="{% static 'js/navbar.js' %}"></script>
   </body>
 </html>
 {% endwith %}

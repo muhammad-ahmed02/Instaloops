@@ -6,14 +6,12 @@
   font-style: normal;
 }
 
-@mixin box(
-  $dir,
+@mixin box($dir,
   $justify,
   $align,
   $padding: 0px,
   $margin: none,
-  $background: none
-) {
+  $background: none) {
   display: flex;
   flex-direction: $dir;
   justify-content: $justify;
@@ -28,9 +26,19 @@
 
 // FONTS
 // $roboto: 'Roboto', sans-serif;
-$bulmaDefault: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Oxygen,
-  Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica,
-  Arial, sans-serif;
+$bulmaDefault: BlinkMacSystemFont,
+-apple-system,
+'Segoe UI',
+Roboto,
+Oxygen,
+Ubuntu,
+Cantarell,
+'Fira Sans',
+'Droid Sans',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
 // COLORS
 $mattBlack: #333;
 $offWhite: #e2e2e2;
@@ -85,18 +93,23 @@ footer {
   background: #fff;
   padding: 20px;
 }
+
 @media (min-width: 960px) {
+
   .form-right,
   .form-left {
     max-width: 700px;
   }
 }
+
 .form-right {
   margin-left: auto;
 }
+
 .form-left {
   margin-right: auto;
 }
+
 .legend {
   font-family: $bulmaDefault;
   font-size: 24px;
@@ -106,18 +119,22 @@ footer {
   color: #333;
   margin: 5px 0px 35px 0px;
 }
+
 .footer {
   padding: 20px 0px;
 }
+
 .input::placeholder {
   color: #333 !important;
 }
+
 .button.sm {
   font-size: 14px !important;
   font-weight: bold;
   padding: 0px 10px;
   border-radius: 4px;
 }
+
 .is-instagram {
   margin: auto;
   padding: 15px 30px;
@@ -131,19 +148,37 @@ footer {
   font-size: 14px;
   transition: all 0.3s;
   border: 1px solid #e33e5c;
+
   &:hover {
     background: #e33e5c;
     color: #fff;
     transition: all 0.3s;
   }
+
   display: flex;
   flex-direction: row;
   align-items: center;
+
   span {
     padding: 0px 10px;
     margin-left: auto;
   }
+
   i {
     color: #e33e5c;
   }
+}
+
+.options {
+  @include box(row, space-around, center, 0px, 0, none);
+}
+.option {
+  padding: 10px 20px;
+  width: 100%;
+  // margin: 5px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
 }

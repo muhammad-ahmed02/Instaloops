@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from types import SimpleNamespace
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
+
+from .models import *
 
 
 def home(request):
@@ -33,4 +35,16 @@ def login(request):
 
 
 def signup(request):
-    return render(request, "pages/signup.dj")
+    context = {'signup_failed': False, "username": "",
+               "email": "", "password1": "", "password2": ""}
+    if request.method == 'POST':
+        username = request.POST.get("auth_username")
+        email = request.POST.get("auth_email")
+        password1 = request.POST.get("auth_password1")
+        password2 = request.POST.get("auth_password2")
+        # context["username"] = username
+        # context["email"] = email
+        # context["password1"] = password1
+        # context["password2"] = password2
+
+    return render(request, "pages/signup.dj", context=context)

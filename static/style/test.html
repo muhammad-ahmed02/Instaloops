@@ -75,7 +75,7 @@
               <p class="control has-icons-left">
                 <input class="input" type="text" placeholder="Username" />
                 <span class="icon is-small is-left">
-                  <i class="fas fa-lock"></i>
+                  <i class="fas fa-text"></i>
                 </span>
               </p>
             </div>
@@ -110,16 +110,39 @@
                 </span>
               </p>
             </div>
+            <label>Select who you are:</label>
+            <div class="options">
+              <button
+                type="button"
+                class="option influencer"
+                style="background-color: #e33e5c"
+                onclick="document.getElementsByClassName('consumer')[0].style.display = 'none'"
+              >
+                <p>Influencer</p>
+              </button>
+              <button
+                type="button"
+                class="option consumer"
+                style="background-color: #48a2dd"
+                onclick="document.getElementsByClassName('influencer')[0].style.display = 'none'"
+              >
+                <p>Consumer</p>
+              </button>
+            </div>
             <div class="field">
               <p class="control">
-                <button class="button is-success" style="width: 100%">
-                  Signup
+                <button class="button sm is-info" style="width: 100%">
+                  SIGNUP
                 </button>
               </p>
             </div>
             <div class="field">
               <p class="control">
-                <button class="button">Sign up with Instagram</button>
+                <button class="is-instagram" style="width: 100%">
+                  <span>Signup With Instagram</span>
+                  <i class="fab fa-lg fa-instagram"></i>
+                  <div style="margin-right: auto"></div>
+                </button>
               </p>
             </div>
           </form>
@@ -133,6 +156,6 @@
       </footer>
     </div>
 
-    <script src="navbar.js"></script>
+    <script src="../js/navbar.js"></script>
   </body>
 </html>

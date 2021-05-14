@@ -20,10 +20,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "content.apps.ContentConfig",
+    'social_django',
     "allauth",
     "allauth.account",
-    "allauth.socialaccount",
-    "allauth.socialaccount.providers.facebook",
+    # "allauth.socialaccount",
+    # "allauth.socialaccount.providers.facebook",
 ]
 
 MIDDLEWARE = [
@@ -88,7 +89,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
+    # "allauth.account.auth_backends.AuthenticationBackend",
+    'social_core.backends.instagram.InstagramOAuth2',
 )
 
 LANGUAGE_CODE = "en-us"
@@ -112,3 +114,8 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = "/media/"
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
